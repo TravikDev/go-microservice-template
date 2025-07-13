@@ -1,9 +1,12 @@
 package client
 
-// NatsClient placeholder for NATS connection.
-type NatsClient struct{}
+import "github.com/example/user-service/config"
 
-func NewNatsClient() (*NatsClient, error) {
-	// TODO: create NATS client
-	return &NatsClient{}, nil
+// NatsClient placeholder for NATS connection.
+type NatsClient struct {
+	URL string
+}
+
+func NewNatsClient(cfg config.Config) (*NatsClient, error) {
+	return &NatsClient{URL: cfg.NatsURL}, nil
 }

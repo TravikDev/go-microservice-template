@@ -1,6 +1,18 @@
 package subscriber
 
+import (
+	"log"
+
+	"github.com/example/user-service/client"
+	"github.com/example/user-service/config"
+)
+
 func Start() error {
-	// TODO: connect to NATS and subscribe to events
+	cfg := config.Load()
+	_, err := client.NewNatsClient(cfg)
+	if err != nil {
+		return err
+	}
+	log.Println("Subscribed to user events")
 	return nil
 }
