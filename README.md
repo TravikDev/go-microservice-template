@@ -81,3 +81,7 @@ To run the worker or subscriber instead, set the `SERVICE` environment variable:
 ```bash
 docker run --rm -e SERVICE=worker user-service
 ```
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
