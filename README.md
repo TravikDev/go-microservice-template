@@ -43,3 +43,26 @@ GitHub Actions will execute the same checks on every push or pull request via `.
 - `GET /ping` - health check
 - `GET /users` - list all users
 - `GET /users/{id}/characters` - list characters for a user
+## Installation
+
+Ensure Go 1.24 or newer is installed. Download dependencies with:
+
+```bash
+make deps
+```
+
+## Environment Variables
+
+- `NATS_URL` - NATS server URL
+- `TEMPORAL_URL` - Temporal frontend address
+- `DATABASE_URL` - PostgreSQL connection string
+
+## Running the Services
+
+Each component can be started individually:
+
+```bash
+make api        # launches the REST API on :8080
+make worker     # runs the Temporal worker
+make subscriber # starts the NATS subscriber
+```
