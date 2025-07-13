@@ -1,19 +1,22 @@
 package service
 
-import "github.com/example/user-service/model"
+import (
+	"context"
+
+	"github.com/example/user-service/model"
+	"github.com/example/user-service/repository"
+)
 
 // UserService contains core business logic.
 type UserService struct {
-	users []model.User
+	repo  repository.UserRepository
 	chars map[string][]model.Character
 }
 
-func NewUserService() *UserService {
+// NewUserService constructs a UserService with the provided repository.
+func NewUserService(repo repository.UserRepository) *UserService {
 	return &UserService{
-		users: []model.User{
-			{ID: "1", Name: "Alice"},
-			{ID: "2", Name: "Bob"},
-		},
+		repo: repo,
 		chars: map[string][]model.Character{
 			"1": {
 				{ID: "c1", UserID: "1", Name: "Warrior"},
@@ -28,7 +31,11 @@ func NewUserService() *UserService {
 
 // ListUsers returns all users.
 func (s *UserService) ListUsers() []model.User {
-	return s.users
+	users, err := s.repo.List(context.Background())
+	if err != nil {
+		return nil
+	}
+	return users
 }
 
 // ListCharacters returns all characters for a given user.
