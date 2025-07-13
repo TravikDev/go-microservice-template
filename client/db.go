@@ -4,6 +4,7 @@ import (
 	"database/sql"
 
 	"github.com/example/user-service/config"
+	_ "github.com/lib/pq"
 )
 
 // DB returns a database connection.
