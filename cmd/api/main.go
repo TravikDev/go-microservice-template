@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 	"net/http"
-  
+
 	"github.com/example/user-service/api/router"
 	"github.com/example/user-service/service"
 )

@@ -35,6 +35,7 @@ func (s *UserService) ListUsers() []model.User {
 func (s *UserService) ListCharacters(userID string) []model.Character {
 	return s.chars[userID]
 }
+
 // UserService contains core business logic.
 type UserService struct{}
 

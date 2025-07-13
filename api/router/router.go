@@ -2,7 +2,7 @@ package router
 
 import (
 	"net/http"
-  
+
 	"github.com/example/user-service/api/handler"
 	"github.com/example/user-service/service"
 )
