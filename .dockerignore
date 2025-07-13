@@ -1,0 +1,15 @@
+# Exclude git directory
+.git
+# Exclude test files
+*.test
+*.out
+coverage.*
+*.coverprofile
+profile.cov
+# Exclude editor configs
+.idea
+.vscode
+# Exclude environment files
+.env
+# Exclude vendor if used
+vendor/
