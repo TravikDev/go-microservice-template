@@ -15,7 +15,7 @@ func New(svc *service.UserService) http.Handler {
 	mux.HandleFunc("/ping", handler.Ping)
 	mux.HandleFunc("/users", userHandler.ListUsers)
 	mux.HandleFunc("/users/", charHandler.ListCharacters)
-)
+}
 
 func New() http.Handler {
 	mux := http.NewServeMux()

@@ -11,8 +11,7 @@ import (
 func main() {
 	svc := service.NewUserService()
 	r := router.New(svc)
-
-)
+}
 
 func main() {
 	r := router.New()
