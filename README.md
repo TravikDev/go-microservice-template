@@ -66,3 +66,18 @@ make api        # launches the REST API on :8080
 make worker     # runs the Temporal worker
 make subscriber # starts the NATS subscriber
 ```
+
+## Docker
+
+Build the Docker image and run the API service (default):
+
+```bash
+docker build -t user-service .
+docker run --rm -p 8080:8080 user-service
+```
+
+To run the worker or subscriber instead, set the `SERVICE` environment variable:
+
+```bash
+docker run --rm -e SERVICE=worker user-service
+```
