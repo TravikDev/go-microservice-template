@@ -38,10 +38,8 @@ Run `./scripts/check.sh` to format, vet and test the project.
 
 GitHub Actions will execute the same checks on every push or pull request via `.github/workflows/checks.yml`.
 
-
 ## Sample API
 
 - `GET /ping` - health check
 - `GET /users` - list all users
 - `GET /users/{id}/characters` - list characters for a user
-
